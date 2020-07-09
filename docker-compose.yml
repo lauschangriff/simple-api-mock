@@ -1,0 +1,7 @@
+web:
+  build: ./app
+  container_name: eggs_api
+  ports:
+    - "7222:7222"
+  volumes:
+    - .:/apimock
