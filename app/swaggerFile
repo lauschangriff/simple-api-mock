@@ -1,241 +1,101 @@
 {
-  "swagger": "2.0",
-  "info": {
-    "version": "1.0.0",
-    "title": "eggs sample api",
-    "license": {
-      "name": "MIT"
-    }
-  },
-  "host": "localhost:7222",
-  "basePath": "/eggsapi",
-  "schemes": [
-    "http"
-  ],
-  "consumes": [
-    "application/json"
-  ],
-  "produces": [
-    "application/json"
-  ],
-  "paths": {
-    "/person/{id}": {
-      "get": {
-        "description": "Get person by id",
-        "summary": "Get person by id",
-        "operationId": "getpersonsbyid",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "ID of person to return",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "successul operation",
-            "schema": {
-              "$ref": "#/definitions/person"
+   "swagger":"2.0",
+   "info":{
+      "version":"1.0.0",
+      "title":"sample api",
+      "license":{
+         "name":"MIT"
+      }
+   },
+   "host":"localhost:7222",
+   "basePath":"/sampleapi",
+   "schemes":[
+      "http"
+   ],
+   "consumes":[
+      "application/json"
+   ],
+   "produces":[
+      "application/json"
+   ],
+   "paths":{
+      "/person/{id}":{
+         "get":{
+            "description":"Get person by id",
+            "summary":"Get person by id",
+            "operationId":"getpersonsbyid",
+            "produces":[
+               "application/json"
+            ],
+            "parameters":[
+               {
+                  "name":"id",
+                  "in":"path",
+                  "description":"ID of person to return",
+                  "required":true,
+                  "type":"string"
+               }
+            ],
+            "responses":{
+               "200":{
+                  "description":"successul operation",
+                  "schema":{
+                     "$ref":"#/definitions/person"
+                  }
+               }
             }
-          }
-        }
-      }
-    },
-    "/persons": {
-      "get": {
-        "description": "Get all persons",
-        "summary": "Get all persons",
-        "operationId": "getsectors",
-        "produces": [
-          "application/json"
-        ],
-        "responses": {
-          "200": {
-            "description": "successul operation",
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/person"
-              }
+         }
+      },
+      "/persons":{
+         "get":{
+            "description":"Get all persons",
+            "summary":"Get all persons",
+            "operationId":"getsectors",
+            "produces":[
+               "application/json"
+            ],
+            "responses":{
+               "200":{
+                  "description":"successul operation",
+                  "schema":{
+                     "type":"array",
+                     "items":{
+                        "$ref":"#/definitions/person"
+                     }
+                  }
+               }
             }
-          }
-        }
+         }
       }
-    },
-    "/company/{id}": {
-      "get": {
-        "description": "Get company by id",
-        "summary": "Get company by id",
-        "operationId": "getcompanybyid",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "ID of the company to return",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "successul operation",
-            "schema": {
-              "$ref": "#/definitions/company"
+   },
+   "definitions":{
+      "person":{
+         "properties":{
+            "pid":{
+               "type":"string",
+               "example":"21"
+            },
+            "Name":{
+               "type":"string",
+               "example":"Mueller"
+            },
+            "Vorname":{
+               "type":"string",
+               "example":"Max"
+            },
+            "Position":{
+               "type":"string",
+               "example":"Senior Consultant"
+            },
+            "Telefon":{
+               "type":"string",
+               "example":"089/123456"
+            },
+            "Email":{
+               "type":"string",
+               "example":"mmueller@sample.de"
             }
-          }
-        }
+         }
       }
-    },
-    "/companies": {
-      "get": {
-        "description": "Get all companies",
-        "summary": "Get all companies",
-        "operationId": "getallcompanies",
-        "produces": [
-          "application/json"
-        ],
-        "responses": {
-          "200": {
-            "description": "successul operation",
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/company"
-              }
-            }
-          }
-        }
-      }
-    }
-  },
-  "definitions": {
-    "person": {
-      "properties": {
-        "pid": {
-          "type": "string",
-          "example": "21"
-        },
-        "Name": {
-          "type": "string",
-          "example": "Mueller"
-        },
-        "Vorname": {
-          "type": "string",
-          "example": "Max"
-        },
-        "Position": {
-          "type": "string",
-          "example": "Senior Consultant"
-        },
-        "Telefon": {
-          "type": "string",
-          "example": "089/123456"
-        },
-        "Email": {
-          "type": "string",
-          "example": "mmueller@eggs.de"
-        }
-      }
-    },
-    "company": {
-      "properties": {
-        "company_name_id": {
-          "type": "string",
-          "example": "3-round-stones-inc"
-        },
-        "company_name": {
-          "type": "string",
-          "example": "3 Round Stones"
-        },
-        "url": {
-          "type": "string",
-          "example": "http://3RoundStones.com"
-        },
-        "year_founded": {
-          "type": "string",
-          "example": "2010"
-        },
-        "city": {
-          "type": "string",
-          "example": "Washington"
-        },
-        "state": {
-          "type": "string",
-          "example": "DC"
-        },
-        "country": {
-          "type": "string",
-          "example": "us"
-        },
-        "zip_code": {
-          "type": "string",
-          "example": "20004"
-        },
-        "full_time_employees": {
-          "type": "string",
-          "example": "1-10"
-        },
-        "company_type": {
-          "type": "string",
-          "example": "Private"
-        },
-        "company_category": {
-          "type": "string",
-          "example": "Data/Technology"
-        },
-        "revenue_source": {
-          "type": "string",
-          "example": "Data analysis for clients"
-        },
-        "business_model": {
-          "type": "string",
-          "example": "Database licensing"
-        },
-        "social_impact": {
-          "type": "string",
-          "example": "Subscriptions"
-        },
-        "description": {
-          "type": "string",
-          "example": "Business to Business, Business to Consumer"
-        },
-        "description_short": {
-          "type": "string",
-          "example": ""
-        },
-        "source_count": {
-          "type": "string",
-          "example": ""
-        },
-        "data_types": {
-          "type": "string",
-          "example": ""
-        },
-        "example_uses": {
-          "type": "string",
-          "example": ""
-        },
-        "data_impacts": {
-          "type": "string",
-          "example": ""
-        },
-        "financial_info": {
-          "type": "string",
-          "example": ""
-        },
-        "last_updated": {
-          "type": "string",
-          "example": "2014-11-12 14:44:25.969871"
-        }
-      }
-    }
-  }
+   }
 }

@@ -1,6 +1,6 @@
 FROM python
 
-MAINTAINER Alexander Lotz "alotz@eggs.de"
+MAINTAINER Alexander Lotz "alexlotz@posteo.de"
 
 COPY . /app
 WORKDIR /app

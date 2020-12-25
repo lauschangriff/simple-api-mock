@@ -1,6 +1,6 @@
 web:
   build: ./app
-  container_name: eggs_api
+  container_name: simple_mock_api
   ports:
     - "7222:7222"
   volumes:
